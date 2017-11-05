@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>room</title>
+    <link rel="stylesheet" href="css/MTO.css">
+    <script src="js/base.js"></script>
+    <script src="js/MTO.js"></script>
+    <script src="js/MTO_login.js"></script>
+</head>
+<body>
+<canvas id="bg_canvas" class="bg-canvas">
+    您的浏览器不支持canvas
+</canvas>
+<div class="header">
+    <div class="header-inner">
+        <div class="header-left-wrap">logo</div>
+        <div class="header-middle-wrap">
+            <ul class="header-middle-wrap">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+        <div class="header-right-wrap">
+            <div class="header-login-wrap">
+                <a id="headerLoginBtn" href="#">登录</a>
+                <a id="headerRegisterBtn" href="#">注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="aside" class="aside">
+    <div class="nav">
+        <ul class="nav-list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <div id="nav_content" class="nav-content"></div>
+</div>
+<div id="content" class="content">
+    <div id="content_bg" class="content-bg"></div>
+    <div id="content_box" class="content-box">
+        <div class="main-box">
+            <!--播放器-->
+            <div class="player-box big-box-shadow">
+                <div class="cover-box">
+                    <img class="cover" src="source/1.jpg">
+                    <span class="disc"></span>
+                    <span class="tone-arm"></span>
+                </div>
+                <div class="control-box">
+                    <div class="progress-bar-box">
+                        <span class="progress-time">00:00</span>
+                        <div class="progress-bar">
+                            <span class="pba-bar"></span>
+                            <span class="pba-button"></span>
+                        </div>
+                        <span class="progress-time">03:00</span>
+                    </div>
+                    <div class="button-box">
+                        <i class="btn-volume"></i>
+                        <i class="btn-start"></i>
+                        <i class="btn-skip"></i>
+                    </div>
+                </div>
+                <div class="play-list-box">
+                    <div class="pl-head"></div>
+                    <div class="pl-body">
+                        <ul class="playlist">
+                            <!--li*20>(div.pl-word>(span.pl-music-title{你还要我怎样}+span.pl-singer{&nbsp;-&nbsp;歌手}))+div.pl-btn>(i.pl-to-top+i.pl-delete)-->
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                            <li>
+                                <div class="pl-word"><span class="pl-music-title">你还要我怎样</span><span class="pl-singer">&nbsp;-&nbsp;歌手</span>
+                                </div>
+                                <div class="pl-btn"><i class="pl-to-top"></i><i class="pl-delete"></i></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="pb-bg"></span>
+            </div>
+            <!--歌词盒子-->
+            <div class="show-box">
+                <!--歌词盒子-->
+                <div id="lrc_box" class="lrc-box big-box-shadow"></div>
+                <!--房间信息盒子-->
+                <div class="room-box big-box-shadow">
+                    <div class="room-info">
+                        <img class="ri-pic" src="source/1.jpg">
+                        <div>
+                            <h1 class="ri-title">还要我怎样</h1>
+                            <p class="ri-id">房间号：10001</p>
+                            <p class="ri-owner`">房主：<a href="#">你大爷</a></p>
+                        </div>
+                    </div>
+                    <div class="room-board">
+                        <p>请大家不要点一些乱七八糟的歌曲，谢谢！</p>
+                    </div>
+                </div>
+            </div>
+            <!--聊天-->
+            <div class="chat-box big-box-shadow">
+                <div class="cb-head">
+                    <div class="cb-h-info"></div>
+                    <div class="cb-h-tab-box">
+
+                    </div>
+                </div>
+                <!--聊天内容-->
+                <div class="cb-body">
+                    <!--显示部分-->
+                    <div class="cb-chat-box">
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！一见杨过误终生！一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                        <p><span>黯然销魂</span><a href="#">杨过：</a>一见杨过误终生！</p>
+                    </div>
+                    <!--输入部分-->
+                    <div class="cb-input-box">
+                        <div>
+                            <textarea id="cb_input" class="cb-input" title="文明聊天！"></textarea>
+                        </div>
+                        <div>
+                            <div class="cb-vip-box"></div>
+                            <button class="cb-btn-sent">发言</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="login-content">
+    <div class="login-box">
+        <div class="login-wrap">
+            <p>账号密码登录</p>
+            <div>
+                <ul class="login-list">
+                    <li>
+                        <span class="login-icon-name"></span>
+                        <input class="login-name" type="text" placeholder="请输入用户名">
+                        <span></span>
+                    </li>
+                    <li>
+                        <span class="login-icon-pw"></span>
+                        <input class="login-password" type="password" placeholder="请输入密码">
+                        <span></span>
+                    </li>
+                </ul>
+                <div class="auto-login-wrap">
+                    <div class="auto-login">
+                        <input id="remember" type="checkbox" title="选中自动登录">
+                        <span>
+                            <label for="remember">&nbsp;记住我</label>
+                        </span>
+                    </div>
+                    <span class="forgot-password">
+                        <a href="">忘记密码</a>
+                    </span>
+                </div>
+                <ul class="register-list">
+                    <li>
+                        <span class="login-icon-pw"></span>
+                        <input class="register-password" type="password" placeholder="再次输入密码">
+                        <span></span>
+                    </li>
+                    <li class="verify-wrap">
+                        <input type="text" class="verify-code-input" placeholder="请填写验证码">
+                        <span class="verify-code">验证码</span>
+                    </li>
+                </ul>
+                <input class="login-btn" type="submit" value="登 录">
+                <div class="third-login">
+                    <span>第三方</span><span>第三方</span><span>第三方</span>
+                </div>
+            </div>
+        </div>
+        <span class="login-box-close-btn">×</span>
+    </div>
+</div>
+<script>
+    "use strict";
+</script>
+</body>
+</html>

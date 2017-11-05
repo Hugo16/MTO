@@ -1,0 +1,855 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font: 14px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--linkColor);
+}
+
+a,
+i {
+    cursor: pointer;
+}
+
+:root {
+    --bg-baseColor: #232323;
+    --bg-baseColor-50: rgba(23, 23, 23, 0.5);
+    --bg-heightLight: rgba(255, 255, 255, 0.3);
+    --linkColor: #8c919e;
+}
+
+.big-box-shadow {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.bg-canvas {
+    position: fixed;
+}
+
+/********** 顶部 **********/
+
+.header {
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    background-color: red;
+    z-index: 1001;
+    background-color: var(--bg-baseColor);
+    color: var(--linkColor);
+}
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-login-wrap {
+    line-height: 56px;
+}
+
+.header-login-wrap a {
+    display: inline-block;
+    margin-right: 10px;
+    width: 50px;
+    line-height: 26px;
+    text-align: center;
+    border: 1px solid var(--linkColor);
+    border-radius: 10px;
+}
+
+.header-login-wrap a:hover {
+    background-color: var(--bg-heightLight);
+    color: white;
+}
+
+/********** 登录注册 **********/
+
+.login-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.login-box {
+    width: 500px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 50px 60px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-wrap > p {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.login-list li {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid var(--linkColor);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.login-list-li-focus {
+    border: 0;
+    box-shadow: 0 0 5px var(--bg-baseColor);
+}
+
+.login-list li span {
+    display: inline-block;
+    min-width: 24px;
+    height: 24px;
+    transform: scale(1.2);
+    margin: 0 3px;
+}
+
+.login-icon-name {
+    background: url(../source/coverall.png) 0 -502px;
+}
+
+.login-icon-pw {
+    background: url(../source/coverall.png) -25px -502px;
+}
+
+.login-list li input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding-left: 5px;
+    font-size: 1.3em;
+}
+
+.auto-login-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -15px;
+}
+
+.auto-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.auto-login input {
+    cursor: pointer;
+}
+
+.auto-login span {
+    font-size: 1em;
+}
+
+.login-btn {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    background-color: var(--bg-baseColor);
+    color: white;
+    font-size: 1.5em;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn:active {
+    background-color: var(--bg-baseColor-50);
+}
+
+.third-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.third-login span {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background-color: black;
+    line-height: 50px;
+    color: white;
+}
+
+.login-box-close-btn {
+    width: 25px;
+    height: 25px;
+    background-color: var(--bg-baseColor);
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.register-list li:nth-child(1) {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid var(--linkColor);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.register-list li:nth-child(1) span {
+    display: inline-block;
+    min-width: 24px;
+    height: 24px;
+    transform: scale(1.2);
+    margin: 0 3px;
+}
+
+.register-list li:nth-child(1) input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding-left: 5px;
+    font-size: 1.3em;
+}
+
+.verify-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.verify-code-input {
+    width: 200px;
+    height: 40px;
+    border: 1px solid var(--linkColor);
+    border-radius: 5px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.verify-code {
+    display: inline-block;
+    height: 40px;
+    width: 150px;
+    background-color: black;
+
+    color: white;
+}
+
+/********** 侧边 **********/
+
+.aside {
+    height: 100%;
+    position: fixed;
+    display: flex;
+    z-index: 999;
+}
+
+.nav {
+    min-width: 50px;
+    height: 100%;
+    background-color: white;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 0 10px #767676;
+    z-index: 999;
+}
+
+.nav-list {
+    min-width: 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.nav-list li {
+    width: 100%;
+    height: 100px;
+    background-color: pink;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.nav-content {
+    /*background-color: blue;*/
+}
+
+/********** 内容 **********/
+
+.content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50px;
+    z-index: 998;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+.content-bg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../source/c_bg.jpg);
+}
+
+.content-box {
+    width: 100%;
+    height: 100%;
+    min-height: 752px;
+    padding: 50px 0 0 50px;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    position: relative;
+}
+
+/********* 主要界面 *********/
+
+.main-box {
+    width: 75%;
+    min-width: 1200px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+}
+
+/********* 播放器界面 *********/
+
+.player-box {
+    min-width: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pb-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: block;
+    background-image: url(../source/1.jpg);
+    background-size: cover;
+    -webkit-filter: blur(20px); /* Chrome, Safari, Opera */
+    filter: blur(20px);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/********* 封面界面 *********/
+
+.cover-box {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    z-index: 2;
+}
+
+.cover {
+    width: 167px;
+    height: 167px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    border-radius: 50%;
+    animation: cover-roll 5s linear infinite;
+}
+
+@keyframes cover-roll {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.disc {
+    width: 201px;
+    height: 201px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: block;
+    background-image: url(../source/coverall.png);
+    transform: scale(1.2);
+    animation: disc-roll 0.2s linear infinite;
+}
+
+@keyframes disc-roll {
+    from {
+        transform: scale(1.2) rotate(0deg);
+    }
+    to {
+        transform: scale(1.2) rotate(3deg);
+    }
+}
+
+.tone-arm {
+    width: 61px;
+    height: 210px;
+    background: url(../source/coverall.png) -235px 0;
+    position: absolute;
+    display: block;
+    left: 240px;
+    transform: scale(0.9) rotate(0deg);
+    transform-origin: 40px 25px;
+}
+
+/********* 控制器 *********/
+
+.control-box {
+    position: relative;
+    z-index: 2;
+}
+
+/********* 进度条 *********/
+.progress-bar-box {
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+}
+
+.progress-time {
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+.progress-bar {
+    width: 65%;
+    height: 10px;
+    background-color: rgba(42, 42, 42, 0.5);
+    box-shadow: 2px 2px 5px black;
+    border-radius: 5px;
+    position: relative;
+}
+
+.pba-bar {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    background-color: #e1e1e1;
+    box-shadow: 0 0 4px rgba(42, 42, 42, 0.5) inset;
+    border-radius: 5px;
+}
+
+.pba-button {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    display: inline-block;
+    background-color: #f3eded;
+    border: 3px solid #7b7777;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/********* 播放器按钮 *********/
+
+.button-box {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-box i {
+    width: 118px;
+    height: 120px;
+    display: block;
+    margin: 0 -20px;
+    cursor: pointer;
+}
+
+.btn-volume {
+    background: url(../source/coverall.png) 0 -344px;
+    transform: scale(0.5);
+}
+
+.btn-start {
+    background: url(../source/coverall.png) 0 -218px;
+    transform: scale(0.6);
+}
+
+.btn-skip {
+    background: url(../source/coverall.png) -238px -218px;
+    transform: scale(0.5);
+}
+
+/********* 播放列表 *********/
+
+.play-list-box {
+    width: 100%;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.pl-head {
+    width: 100%;
+    height: 30px;
+}
+
+.pl-body {
+    /*设置成滚动条出现时的大小*/
+    width: calc(100% - 7px);
+    height: 85%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.pl-body:hover {
+    /*此时滚动条已经出现，这个宽度会自动减去7px*/
+    width: 100%;
+    overflow-y: scroll;
+}
+
+/* 设置滚动条的样式 */
+.pl-body::-webkit-scrollbar {
+    width: 7px;
+}
+
+/*!* 滚动槽 *!*/
+.pl-body::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 1px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 滚动条滑块 */
+.pl-body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.playlist {
+    min-width: 95%;
+    height: 100%;
+    padding: 0 15px;
+    float: left;
+}
+
+.playlist li {
+    width: 100%;
+    height: 30px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+}
+
+.pl-word {
+    min-width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pl-music-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    display: inline-block;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.pl-singer {
+    max-width: 30%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    display: inline-block;
+    color: #777777;
+}
+
+.pl-btn {
+    display: flex;
+    align-items: center;
+}
+
+.pl-btn i {
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    background-image: url(../source/coverall.png);
+    transform: scale(0.6);
+}
+
+.pl-delete {
+    background-position: 0 -472px;
+}
+
+.pl-to-top {
+    background-position: -26px -472px;
+}
+
+/********* 中间展示盒子 *********/
+
+.show-box {
+    width: 100%;
+    min-width: 450px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+/********* 歌词盒子 *********/
+
+.lrc-box {
+    width: 100%;
+    height: 450px;
+    background-color: var(--bg-baseColor);
+    position: relative;
+    overflow: hidden;
+}
+
+.lrc-box .barrage {
+    position: absolute;
+    left: 100%;
+    white-space: nowrap;
+}
+
+/********* 房间信息盒子 *********/
+
+.room-box {
+    width: 100%;
+    height: 230px;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.room-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.room-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px;
+    margin-bottom: 10px;
+}
+
+.room-info div {
+    padding: 5px 15px;
+}
+
+.room-info .ri-title {
+    font-size: 2em;
+}
+
+.room-info p {
+    font-size: 1.1em;
+    margin-top: 8px;
+}
+
+.room-board {
+    width: 100%;
+    border-top: 1px dotted;
+}
+
+.room-board p {
+    text-indent: 1em;
+    font-size: 1.1em;
+    margin-top: 8px;
+}
+
+/********* 聊天盒子 *********/
+
+.chat-box {
+    min-width: 350px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+}
+
+/********* 选择框 *********/
+
+.cb-head {
+    width: 100%;
+    flex: 0 0 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cb-h-info {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    flex: 0 0 80%;
+}
+
+.cb-h-tab-box {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    flex: 0 0 20%;
+}
+
+/********* 显示框 *********/
+
+.cb-body {
+    width: 100%;
+    flex: 0 0 80%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.cb-chat-box {
+    width: 100%;
+    flex: 1;
+    background-color: #eeeeee;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* 设置滚动条的样式 */
+.cb-chat-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+/*!* 滚动槽 *!*/
+.cb-chat-box::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 1px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 滚动条滑块 */
+.cb-chat-box::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.cb-chat-box p span {
+    margin-right: 5px;
+    color: red;
+    text-shadow: 0 0 5px yellow;
+    font-size: 1.2em;
+}
+
+.cb-chat-box p a {
+    font-size: 1.2em;
+}
+
+.cb-chat-box p {
+    font-size: 1.2em;
+}
+
+/********* 输入部分 *********/
+
+.cb-input-box {
+    width: 100%;
+    flex: 0 0 20%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+.cb-input-box > div:nth-child(1) {
+    height: 65%;
+    position: relative;
+}
+
+.cb-input {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: 5px;
+    left: 5px;
+    position: relative;
+    resize: none;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.cb-input-box > div:nth-child(2) {
+    width: 100%;
+    height: 35%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cb-btn-sent {
+    width: 70px;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    border: none;
+    color: white;
+    background-color: transparent;
+    outline: none;
+}
+
+.cb-vip-box {
+    width: calc(100% - 70px);
+    height: 100%;
+    position: absolute;
+    background-color: white;
+}
+
