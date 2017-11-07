@@ -147,10 +147,11 @@ function client() {
  * @param obj
  * @param speed
  * @param target
+ * @param fn
  */
 function linear(obj, speed, target, fn) {
     clearInterval(obj.timer);
-    var begin = obj.offsetLeft;
+    let begin = obj.offsetLeft;
     if (begin > target) {
         speed = -speed;
     }
@@ -167,7 +168,11 @@ function linear(obj, speed, target, fn) {
     }, 10);
 }
 
-// DOM加载完毕后执行函数
+/**
+ * @description DOM加载完毕后执行函数
+ * @param fn
+ * @constructor
+ */
 function DOMready(fn) {
     let wd = window.document;
 
@@ -184,6 +189,83 @@ function DOMready(fn) {
     }
 }
 
+/**
+ * @description Ajax请求函数
+ * @param option
+ * @constructor
+ */
+function Ajax(option) {
+    // 设置默认请求参数
+    option.tyoe = option.type || "get";
+    option.obj = option.obj || {};
+    option.successCalkBack = option.successCalkBack || function () {
+        console.log("请求成功！");
+    };
+    option.errorCalkBack = option.errorCalkBack || function () {
+        console.log("请求失败！");
+    };
+
+    // 创建请求对象
+    let xmlHttp;
+    if (window.XMLHttpRequest) {
+        xmlHttp = new XMLHttpRequest();
+    }
+    else {
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ;
+
+    // 设置请求路径
+    let arrParam = [];
+    for (var key in option.obj) {
+        arrParam.push(key + "=" + option.obj[key]);
+    }
+    // 解决get请求在ie的缓存问题
+    arrParam.push("time=" + Date.now());
+
+    // 设置请求方法和路径
+    let paramRes = arrParam.join("&");
+    if (option.type == "get") {
+        option.url = option.url + "?" + encodeURI(paramRes);
+    }
+    xmlHttp.open(option.type, option.url, true);
+
+    // 发送请求
+    if (option.type == "post") {
+        // 设置请求报头
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-from-urlencoded")
+        // 发送请求
+        xmlHttp.send(paramRes);
+    }
+    xmlHttp.send();
+
+    // 监听请求状态
+    xmlHttp.onreadystatechange = function () {
+        if (xmlHttp.readyState == 4) {
+            if (xmlHttp.status >= 200 && xmlHttp.status < 300 || xmlHttp.status == 304) {
+                option.successCalkBack(xmlHttp);
+            }
+            else {
+                option.errorCalkBack(xmlHttp);
+            }
+        }
+    }
+}
+
+/**
+ * @description Ajax的get和post方法
+ * @param option
+ * @constructor
+ */
+function GET(option) {
+    option.type = "get";
+    Ajax(option);
+}
+
+function POST(option) {
+    option.type = "post";
+    Ajax(option);
+}
 
 function Barrage(option) {
     this._init(option);

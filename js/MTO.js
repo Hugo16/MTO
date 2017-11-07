@@ -1,8 +1,6 @@
 "use strict";
 DOMready(function () {
-    /**
-     *************************** 背景Canvas部分代码***************************
-     */
+    /**************************** 背景Canvas部分代码****************************/
 
         // 获取canvas
     let bgCanvas = $("#bg_canvas"),
@@ -81,8 +79,8 @@ DOMready(function () {
         // 清除canvas
         ctx.clearRect(0, 0, client().width, client().height);
         // 设置渐变颜色
-        gra.addColorStop(0, "#a18cd1");
-        gra.addColorStop(1, "#97d9e1");
+        gra.addColorStop(0, "#596164");
+        gra.addColorStop(1, "#868f96");
         // 设置填充
         ctx.fillStyle = gra;
         // 填充canvas
@@ -91,9 +89,7 @@ DOMready(function () {
         drawNote();
     }
 
-    /**
-     *************************** 事件 ***************************
-     */
+    /**************************** 事件 ****************************/
 
     // 浏览器窗口大小改变
     window.onresize = function () {
@@ -132,7 +128,8 @@ DOMready(function () {
         // 背景出现
         ease($("#content_bg"), {opacity: 1});
         // 内容左移
-        ease(content, {left: 50});
+        // ease(content, {left: 50});
+        ease(content, {left: 0});
         // 背景canvas停止绘制
         clearInterval(bgTimer);
         bgTimer = null;

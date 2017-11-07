@@ -27,7 +27,10 @@ i {
     --bg-baseColor: #232323;
     --bg-baseColor-50: rgba(23, 23, 23, 0.5);
     --bg-heightLight: rgba(255, 255, 255, 0.3);
+    --bg-baseColor-textColor1: #fafafa;
+    --bg-baseColor-textColor2: #c7c7c7;
     --linkColor: #8c919e;
+    --header-height: 56px;
 }
 
 .big-box-shadow {
@@ -43,9 +46,8 @@ i {
 
 .header {
     width: 100%;
-    height: 56px;
+    height: var(--header-height);
     position: fixed;
-    background-color: red;
     z-index: 1001;
     background-color: var(--bg-baseColor);
     color: var(--linkColor);
@@ -57,8 +59,14 @@ i {
     justify-content: space-between;
 }
 
+.header-right-wrap{
+    display: flex;
+    flex-direction: row;
+}
+
 .header-login-wrap {
-    line-height: 56px;
+    width: 150px;
+    line-height: var(--header-height);
 }
 
 .header-login-wrap a {
@@ -74,6 +82,20 @@ i {
 .header-login-wrap a:hover {
     background-color: var(--bg-heightLight);
     color: white;
+}
+
+.header-user-info-wrap {
+    width: 150px;
+    line-height: var(--header-height);
+}
+
+.user-head {
+    display: inline-block;
+    width: calc(var(--header-height)- 10);
+    height: var(--header-height);
+    border-radius: 50%;
+
+    background-color: red;
 }
 
 /********** 登录注册 **********/
@@ -273,8 +295,9 @@ i {
 /********** 侧边 **********/
 
 .aside {
-    height: 100%;
+    height: calc(100% - 150px);
     position: fixed;
+    top: 75px;
     display: flex;
     z-index: 999;
 }
@@ -312,7 +335,7 @@ i {
     width: 100%;
     height: 100%;
     position: absolute;
-    left: 50px;
+    /*left: 50px;*/
     z-index: 998;
     padding-top: 50px;
     box-sizing: border-box;
@@ -325,7 +348,11 @@ i {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url(../source/c_bg.jpg);
+    /*background-image: url(../source/c_bg.jpg);*/
+    background-image: url(../source/1.jpg);
+    background-size: cover;
+    -webkit-filter: blur(40px); /* Chrome, Safari, Opera */
+    filter: blur(40px);
 }
 
 .content-box {
@@ -365,10 +392,7 @@ i {
     position: absolute;
     top: 0;
     display: block;
-    background-image: url(../source/1.jpg);
-    background-size: cover;
-    -webkit-filter: blur(20px); /* Chrome, Safari, Opera */
-    filter: blur(20px);
+    background-color: var(--bg-baseColor);
     opacity: 0.8;
     z-index: 1;
 }
@@ -382,28 +406,6 @@ i {
     z-index: 2;
 }
 
-.cover {
-    width: 167px;
-    height: 167px;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    border-radius: 50%;
-    animation: cover-roll 5s linear infinite;
-}
-
-@keyframes cover-roll {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .disc {
     width: 201px;
     height: 201px;
@@ -414,9 +416,9 @@ i {
     right: 0;
     position: absolute;
     display: block;
-    background-image: url(../source/coverall.png);
+    background: url(../source/coverall.png) -3px -1px;
     transform: scale(1.2);
-    animation: disc-roll 0.2s linear infinite;
+    /*animation: disc-roll 0.2s linear infinite;*/
 }
 
 @keyframes disc-roll {
@@ -425,6 +427,28 @@ i {
     }
     to {
         transform: scale(1.2) rotate(3deg);
+    }
+}
+
+.cover {
+    width: 167px;
+    height: 167px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    border-radius: 50%;
+    /*animation: cover-roll 5s linear infinite;*/
+}
+
+@keyframes cover-roll {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
 
@@ -605,7 +629,7 @@ i {
     word-break: keep-all;
     display: inline-block;
     font-size: 1.2em;
-    color: #555;
+    color: var(--bg-baseColor-textColor1);
 }
 
 .pl-singer {
@@ -614,7 +638,7 @@ i {
     text-overflow: ellipsis;
     word-break: keep-all;
     display: inline-block;
-    color: #777777;
+    color: var(--bg-baseColor-textColor2);
 }
 
 .pl-btn {
@@ -735,15 +759,36 @@ i {
 .cb-h-info {
     width: 100%;
     height: 100%;
-    background-color: red;
+    /*background-color: red;*/
     flex: 0 0 80%;
 }
 
 .cb-h-tab-box {
     width: 100%;
     height: 100%;
-    background-color: green;
     flex: 0 0 20%;
+    display: flex;
+    flex-direction: row;
+}
+
+.cb-h-tab-box span {
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    border: 1px solid var(--bg-baseColor);
+    border-radius: 5px 5px 0 0;
+    background-color: var(--bg-baseColor-50);
+    color: var(--bg-baseColor-textColor1);
+    text-align: center;
+    line-height: 200%;
+    cursor: pointer;
+}
+
+.cb-h-tab-box .cur {
+    color: black;
+    background-color: #f8f8f8;
+    position: relative;
+    border-bottom: none;
 }
 
 /********* 显示框 *********/
@@ -760,8 +805,10 @@ i {
 .cb-chat-box {
     width: 100%;
     flex: 1;
-    background-color: #eeeeee;
+    background-color: #f8f8f8;
     padding: 5px;
+    border: 1px solid var(--bg-baseColor);
+    border-top-right-radius: 5px;
     box-sizing: border-box;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -805,7 +852,7 @@ i {
 .cb-input-box {
     width: 100%;
     flex: 0 0 20%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--bg-baseColor);
     overflow: hidden;
 }
 
