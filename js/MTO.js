@@ -106,30 +106,30 @@ DOMready(function () {
     侧边栏点击事件
      */
     let aside = $("#aside"),
-        content = $("#content"),
+        main = $("#main"),
         // 绘制背景canvas的计时器
         bgTimer = null;
     aside.onclick = function () {
         // 如果计时器不存在
         if (!bgTimer) {
             // 侧边内容变大
-            ease($("#nav_content"), {minWidth: 400});
+            ease($("#nav_content"), {width: 400, opacity: 1});
             // 背景消失
             ease($("#content_bg"), {opacity: 0});
             // 内容右移
-            ease(content, {left: 450});
+            ease(main, {left: 450});
             // 设置50毫秒画一次canvas
             bgTimer = setInterval(drawBgCanvas, 50);
         }
     };
-    content.onclick = function () {
+    main.onclick = function () {
         // 侧边内容减小
-        ease($("#nav_content"), {minWidth: 0});
+        ease($("#nav_content"), {width: 0, opacity: 0});
         // 背景出现
         ease($("#content_bg"), {opacity: 1});
         // 内容左移
         // ease(content, {left: 50});
-        ease(content, {left: 0});
+        ease(main, {left: 0});
         // 背景canvas停止绘制
         clearInterval(bgTimer);
         bgTimer = null;

@@ -54,12 +54,23 @@ i {
 }
 
 .header-inner {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.header-right-wrap{
+.header-left-wrap a{
+    display: inline-block;
+    color: var(--bg-baseColor-textColor1);
+    font-size: 3em;
+    font-weight: bolder;
+    line-height: var(--header-height);
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.header-right-wrap {
     display: flex;
     flex-direction: row;
 }
@@ -85,17 +96,24 @@ i {
 }
 
 .header-user-info-wrap {
-    width: 150px;
+    width: 200px;
+    height: 100%;
     line-height: var(--header-height);
+    color: var(--bg-baseColor-textColor1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
 }
 
 .user-head {
     display: inline-block;
-    width: calc(var(--header-height)- 10);
-    height: var(--header-height);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    margin-right: 10px;
 
-    background-color: red;
+    background-color: white;
 }
 
 /********** 登录注册 **********/
@@ -170,20 +188,41 @@ i {
 }
 
 .auto-login-wrap {
+    height: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-top: -15px;
 }
 
 .auto-login {
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
+.auto-login .remember-cover {
+    display: inline-block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 3px solid var(--bg-baseColor);
+    padding: 1px;
+    box-sizing: border-box;
+    background-clip: content-box;
+}
+
+.auto-login .remember-cover-active {
+    background-color: var(--bg-baseColor);
+}
+
 .auto-login input {
     cursor: pointer;
+    z-index: 2;
+    margin-left: 3px;
+    opacity: 0;
 }
 
 .auto-login span {
@@ -305,33 +344,106 @@ i {
 .nav {
     min-width: 50px;
     height: 100%;
-    background-color: white;
-    border-radius: 0 5px 5px 0;
-    box-shadow: 0 0 10px #767676;
-    z-index: 999;
+    background-color: var(--bg-baseColor);
+    border-radius: 0 15px 15px 0;
+    box-shadow: 1px 1px 10px #838383;
+    /*z-index: 999;*/
 }
 
 .nav-list {
     min-width: 50px;
-    height: 100%;
+    height: 90%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     text-align: center;
 }
 
 .nav-list li {
-    width: 100%;
-    height: 100px;
-    background-color: pink;
-    margin: 10px 0;
+    width: 35px;
+    height: 35px;
+    margin: 10px auto;
     cursor: pointer;
+    position: relative;
+}
+
+.nav-list .nav-search-btn{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: url(../source/coverall.png) 0 -532px;
+    transform: translate(-50%,-50%)  scale(0.35);
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .nav-content {
+    width: 0;
+    opacity: 0;
     /*background-color: blue;*/
+}
+
+.nav-content>div{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 8%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /*background-color: red;*/
+}
+
+.nav-content-search-wrap{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    /*background-color: green;*/
+}
+
+.nav-content-search-wrap input{
+    width: 1000%;
+    height: 100%;
+    border: 0;
+    background-color: var(--bg-baseColor-50);
+    color: var(--bg-baseColor-textColor1);
+    padding: 0 10px;
+}
+
+.nav-content-search-wrap span{
+    display: inline-block;
+    min-width: 30px;
+    height: 100%;
+    position: relative;
+    background-color:  var(--bg-baseColor);
+}
+
+.nav-content-search-wrap .search-btn{
+    width:100px;
+    height: 100px;
+    background: url(../source/coverall.png) 0 -532px;
+    transform: translate(-50%,-50%) scale(0.28) rotate(-90deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.nav-content-search-result-box{
+    width: 100%;
+    height: 100%;
+    margin-top:10px;
+    color: var(--bg-baseColor-textColor1);
+    /*background-color: cyan;*/
 }
 
 /********** 内容 **********/
 
-.content {
+.main {
     width: 100%;
     height: 100%;
     position: absolute;

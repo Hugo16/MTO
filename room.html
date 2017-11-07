@@ -13,16 +13,17 @@
     您的浏览器不支持canvas
 </canvas>
 
-<div class="header">
+<header class="header">
     <div class="header-inner">
-        <div class="header-left-wrap">logo</div>
+        <div class="header-left-wrap">
+            <a href="#">MTO</a></div>
         <div class="header-middle-wrap">
             <ul class="header-middle-wrap">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
         <div class="header-right-wrap">
@@ -32,26 +33,38 @@
             </div>
             <div class="header-user-info-wrap">
                 <span class="user-head"></span>
-                <span class="user-name"></span>
+                <span class="user-name">
+                    用户名 ▼
+                </span>
             </div>
         </div>
     </div>
-</div>
+</header>
 
-<div id="aside" class="aside">
+<aside id="aside" class="aside">
     <div class="nav">
         <ul class="nav-list">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
+            <li>
+                <span class="nav-search-btn"></span>
+            </li>
         </ul>
     </div>
-    <div id="nav_content" class="nav-content"></div>
-</div>
+    <div id="nav_content" class="nav-content">
+        <div class="nav-content-search-box">
+            <div class="nav-content-search-wrap">
+            <input type="text" class="search-input">
+                <span>
+                    <span class="search-btn"></span>
+                </span>
+            </div>
+            <div class="nav-content-search-result-box">
+                没有任何结果！
+            </div>
+        </div>
+    </div>
+</aside>
 
-<div id="content" class="content">
+<main id="main" class="main">
     <div id="content_bg" class="content-bg"></div>
     <div id="content_box" class="content-box">
         <div class="main-box">
@@ -251,7 +264,7 @@
             </div>
         </div>
     </div>
-</div>
+</main>
 
 <div class="login-content">
     <div class="login-box">
@@ -272,6 +285,7 @@
                 </ul>
                 <div class="auto-login-wrap">
                     <div class="auto-login">
+                        <span class="remember-cover"></span>
                         <input id="remember" type="checkbox" title="选中自动登录">
                         <span>
                             <label for="remember">&nbsp;记住我</label>
