@@ -96,7 +96,7 @@ function ease(obj, json, time, callback) {
                 callback();
             }
         }
-    }, time || 10);
+    }, time || 16);
 }
 
 /**
@@ -173,7 +173,7 @@ function linear(obj, speed, target, fn) {
  * @param fn
  * @constructor
  */
-function DOMready(fn) {
+function domReady(fn) {
     let wd = window.document;
 
     if (wd.addEventListener) {
@@ -213,7 +213,6 @@ function Ajax(option) {
     else {
         xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    ;
 
     // 设置请求路径
     let arrParam = [];
@@ -243,13 +242,19 @@ function Ajax(option) {
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4) {
             if (xmlHttp.status >= 200 && xmlHttp.status < 300 || xmlHttp.status == 304) {
+                clearTimeout(timer);
                 option.successCalkBack(xmlHttp);
             }
             else {
                 option.errorCalkBack(xmlHttp);
             }
         }
-    }
+    };
+
+    let timer = setTimeout(function () {
+        xmlHttp.abort();
+        alert("网络出了问题？");
+    }, 1000);
 }
 
 /**

@@ -60,7 +60,7 @@ i {
     justify-content: space-between;
 }
 
-.header-left-wrap a{
+.header-left-wrap a {
     display: inline-block;
     color: var(--bg-baseColor-textColor1);
     font-size: 3em;
@@ -145,10 +145,10 @@ i {
     margin-bottom: 30px;
 }
 
-.login-list li {
+.login-list .li-input {
     width: 100%;
     height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -162,7 +162,7 @@ i {
     box-shadow: 0 0 5px var(--bg-baseColor);
 }
 
-.login-list li span {
+.login-list .li-input span {
     display: inline-block;
     min-width: 24px;
     height: 24px;
@@ -178,13 +178,53 @@ i {
     background: url(../source/coverall.png) -25px -502px;
 }
 
-.login-list li input {
+.login-list .li-input input {
     display: inline-block;
     width: 100%;
     height: 100%;
     border: 0;
-    padding-left: 5px;
+    padding: 0 5px;
     font-size: 1.3em;
+}
+
+.verify-result-true {
+    width: 40px !important;
+    height: 100% !important;
+    background-color: #bbffb1 !important;
+}
+
+.verify-result-true:after {
+    content: '✔';
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 1.5em;
+    color: white;
+}
+
+.verify-result-false {
+    width: 40px !important;
+    height: 100% !important;
+    background-color: #ff918b !important;
+}
+
+.verify-result-false:after {
+    content: '×';
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 2em;
+    color: white;
+}
+
+.login-list .error-tips {
+    width: 100%;
+    height: 30px;
+    margin-top: -30px;
+    vertical-align: middle;
+    font-weight: bolder;
+    color:var(--bg-baseColor-textColor2);
+    display: none;
 }
 
 .auto-login-wrap {
@@ -278,10 +318,10 @@ i {
     cursor: pointer;
 }
 
-.register-list li:nth-child(1) {
+.register-list .li-input {
     width: 100%;
     height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -290,7 +330,7 @@ i {
     overflow: hidden;
 }
 
-.register-list li:nth-child(1) span {
+.register-list .li-input span {
     display: inline-block;
     min-width: 24px;
     height: 24px;
@@ -298,16 +338,26 @@ i {
     margin: 0 3px;
 }
 
-.register-list li:nth-child(1) input {
+.register-list .li-input input {
     display: inline-block;
     width: 100%;
     height: 100%;
     border: 0;
-    padding-left: 5px;
+    padding:0 5px;
     font-size: 1.3em;
 }
 
-.verify-wrap {
+.register-list .error-tips {
+    width: 100%;
+    height: 30px;
+    margin-top: -30px;
+    vertical-align: middle;
+    font-weight: bolder;
+    color:var(--bg-baseColor-textColor2);
+    display: none;
+}
+
+.verify-code-wrap {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -368,12 +418,12 @@ i {
     position: relative;
 }
 
-.nav-list .nav-search-btn{
+.nav-list .nav-search-btn {
     display: inline-block;
     width: 100px;
     height: 100px;
     background: url(../source/coverall.png) 0 -532px;
-    transform: translate(-50%,-50%)  scale(0.35);
+    transform: translate(-50%, -50%) scale(0.35);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -385,7 +435,7 @@ i {
     /*background-color: blue;*/
 }
 
-.nav-content>div{
+.nav-content > div {
     width: 80%;
     height: 100%;
     margin: 0 auto;
@@ -396,7 +446,7 @@ i {
     /*background-color: red;*/
 }
 
-.nav-content-search-wrap{
+.nav-content-search-wrap {
     width: 100%;
     height: 30px;
     border-radius: 5px;
@@ -406,7 +456,7 @@ i {
     /*background-color: green;*/
 }
 
-.nav-content-search-wrap input{
+.nav-content-search-wrap input {
     width: 1000%;
     height: 100%;
     border: 0;
@@ -415,28 +465,28 @@ i {
     padding: 0 10px;
 }
 
-.nav-content-search-wrap span{
+.nav-content-search-wrap span {
     display: inline-block;
     min-width: 30px;
     height: 100%;
     position: relative;
-    background-color:  var(--bg-baseColor);
+    background-color: var(--bg-baseColor);
 }
 
-.nav-content-search-wrap .search-btn{
-    width:100px;
+.nav-content-search-wrap .search-btn {
+    width: 100px;
     height: 100px;
     background: url(../source/coverall.png) 0 -532px;
-    transform: translate(-50%,-50%) scale(0.28) rotate(-90deg);
+    transform: translate(-50%, -50%) scale(0.28) rotate(-90deg);
     position: absolute;
     top: 50%;
     left: 50%;
 }
 
-.nav-content-search-result-box{
+.nav-content-search-result-box {
     width: 100%;
     height: 100%;
-    margin-top:10px;
+    margin-top: 10px;
     color: var(--bg-baseColor-textColor1);
     /*background-color: cyan;*/
 }

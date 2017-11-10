@@ -1,5 +1,5 @@
 "use strict";
-DOMready(function () {
+new domReady(function () {
     /**************************** 背景Canvas部分代码****************************/
 
         // 获取canvas

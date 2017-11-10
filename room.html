@@ -5,6 +5,7 @@
     <title>room</title>
     <link rel="stylesheet" href="css/MTO.css">
     <script src="js/base.js"></script>
+    <script src="js/md5.min.js"></script>
     <script src="js/MTO.js"></script>
     <script src="js/MTO_login.js"></script>
 </head>
@@ -52,7 +53,7 @@
     <div id="nav_content" class="nav-content">
         <div class="nav-content-search-box">
             <div class="nav-content-search-wrap">
-            <input type="text" class="search-input">
+                <input type="text" class="search-input" title="搜索">
                 <span>
                     <span class="search-btn"></span>
                 </span>
@@ -272,16 +273,18 @@
             <p>账号密码登录</p>
             <div>
                 <ul class="login-list">
-                    <li>
+                    <li class="li-input">
                         <span class="login-icon-name"></span>
-                        <input class="login-name" type="text" placeholder="请输入用户名">
-                        <span></span>
+                        <input id="login_name" class="login-name" type="text" placeholder="请输入用户名">
+                        <span class="verify-result-name"></span>
                     </li>
-                    <li>
+                    <li class="error-tips">用户名：6 到 10 位 字母、数字！</li>
+                    <li class="li-input">
                         <span class="login-icon-pw"></span>
-                        <input class="login-password" type="password" placeholder="请输入密码">
-                        <span></span>
+                        <input id="login_password" class="login-password" type="password" placeholder="请输入密码">
+                        <span class="verify-result-pw"></span>
                     </li>
+                    <li class="error-tips">密码：6 到14 位 字母、数字、不包含空格的符号！</li>
                 </ul>
                 <div class="auto-login-wrap">
                     <div class="auto-login">
@@ -296,17 +299,18 @@
                     </span>
                 </div>
                 <ul class="register-list">
-                    <li>
+                    <li class="li-input">
                         <span class="login-icon-pw"></span>
-                        <input class="register-password" type="password" placeholder="再次输入密码">
-                        <span></span>
+                        <input id="register_password" class="register-password" type="password" placeholder="再次输入密码">
+                        <span class="verify-result-rePw"></span>
                     </li>
-                    <li class="verify-wrap">
-                        <input type="text" class="verify-code-input" placeholder="请填写验证码">
+                    <li class="error-tips">与上面的密码必须一致！</li>
+                    <li class="verify-code-wrap">
+                        <input type="text" id="verify_code_input" class="verify-code-input" placeholder="请填写验证码">
                         <span class="verify-code">验证码</span>
                     </li>
                 </ul>
-                <input class="login-btn" type="submit" value="登 录">
+                <input id="login_btn" class="login-btn" type="submit" value="登 录">
                 <div class="third-login">
                     <span>第三方</span><span>第三方</span><span>第三方</span>
                 </div>
