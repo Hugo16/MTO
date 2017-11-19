@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册MTO账号</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/base.js"></script>
+    <script src="js/signup.js"></script>
+</head>
+<body>
+<canvas id="bg_canvas" class="bg-canvas">
+    您的浏览器不支持canvas
+</canvas>
+
+<header class="header">
+    <div class="header-inner">
+        <div class="header-left-wrap">
+            <a href="#">MTO</a></div>
+        <div class="header-middle-wrap">
+            <ul class="header-middle-wrap">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="header-right-wrap">
+            <div class="header-login-wrap">
+                <a id="headerLoginBtn" href="#">已有账号，现在登录</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="main-center">
+        <div class="signupwrap">
+            <ul class="signup-list">
+                <li>
+                    <span>手机号码</span><input data-index="0" id="phone" type="text" placeholder="请输入手机号码">
+                </li>
+                <li>
+                    <span>密码</span><input data-index="1" id="password" type="password" placeholder="请输入密码">
+                </li>
+                <li>
+                    <span>重复密码</span><input data-index="2" id="rePassword" type="password" placeholder="请再次输入密码">
+                </li>
+                <li>
+                    <span>邮箱</span><input data-index="3" id="email" type="email" placeholder="请输入邮箱地址">
+                </li>
+                <li>
+                    <button>注册</button>
+                </li>
+            </ul>
+            <div class="tip-box">
+                <span></span>
+                <div class="tip-wrap"></div>
+            </div>
+        </div>
+
+        <div class="main-center-right">
+
+        </div>
+    </div>
+</main>
+</body>
+</html>

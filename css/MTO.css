@@ -510,10 +510,13 @@ i {
     position: absolute;
     top: 0;
     left: 0;
-    /*background-image: url(../source/c_bg.jpg);*/
     background-image: url(../source/1.jpg);
-    background-size: cover;
-    -webkit-filter: blur(40px); /* Chrome, Safari, Opera */
+    filter: blur(20px);
+}
+
+.content-bg img{
+    width: 100%;
+    height: 100%;
     filter: blur(40px);
 }
 
@@ -714,6 +717,15 @@ i {
 .btn-skip {
     background: url(../source/coverall.png) -238px -218px;
     transform: scale(0.5);
+}
+
+.btn-active:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
 }
 
 /********* 播放列表 *********/

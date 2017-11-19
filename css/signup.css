@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font: 14px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--linkColor);
+}
+
+a,
+i {
+    cursor: pointer;
+}
+
+:root {
+    --bg-baseColor: #232323;
+    --bg-baseColor-50: rgba(23, 23, 23, 0.5);
+    --bg-baseColor-80: rgba(23, 23, 23, 0.8);
+    --bg-heightLight: rgba(255, 255, 255, 0.3);
+    --bg-baseColor-textColor1: #fafafa;
+    --bg-baseColor-textColor2: #c7c7c7;
+    --linkColor: #8c919e;
+    --header-height: 56px;
+}
+
+.big-box-shadow {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.bg-canvas {
+    position: fixed;
+    z-index: -1;
+}
+
+/********** 顶部 **********/
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1001;
+    background-color: var(--bg-baseColor);
+    color: var(--linkColor);
+}
+
+.header-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-left-wrap a {
+    display: inline-block;
+    color: var(--bg-baseColor-textColor1);
+    font-size: 3em;
+    font-weight: bolder;
+    line-height: var(--header-height);
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.header-right-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-login-wrap {
+    width: 350px;
+    line-height: var(--header-height);
+}
+
+.header-login-wrap a {
+    display: inline-block;
+    margin-right: 10px;
+    width: 150px;
+    line-height: 26px;
+    text-align: center;
+    border: 1px solid var(--linkColor);
+    border-radius: 10px;
+}
+
+.header-login-wrap a:hover {
+    background-color: var(--bg-heightLight);
+    color: white;
+}
+
+/********** 中部 **********/
+
+main {
+    width: 100%;
+}
+
+.main-center {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signupwrap {
+    width: 600px;
+    padding: 50px 100px 50px 50px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.signup-list li {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.signup-list li input {
+    height: 30px;
+    width: 300px;
+    margin-left: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: var(--bg-baseColor-50);
+    color: white;
+    border: 1px solid var(--bg-baseColor-50);
+    border-radius: 3px;
+}
+
+.signup-list li button {
+    height: 100%;
+    width: 300px;
+    background-color: var(--bg-baseColor);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.signup-list li button:hover {
+    background-color: var(--bg-baseColor-80);
+}
+
+.signup-list li button:active {
+    background-color: var(--bg-baseColor-50);
+}
+
+.signup-list li span {
+    color: white;
+}
+
+.tip-box {
+    position: absolute;
+    top: 55px;
+    left: calc(100% - 90px);
+    color: white;
+    display: flex;
+    opacity: 0;
+}
+
+.tip-box span {
+    height: 0;
+    position: relative;
+    top: 2px;
+    border-right: 8px solid var(--bg-baseColor-80);
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+}
+
+.tip-wrap {
+    width: 150px;
+    background-color: var(--bg-baseColor-80);
+    border-radius: 3px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+}
+

@@ -112,9 +112,23 @@ new domReady(function () {
             nameRegTest(nameReg, userName, regResult);
             pwRegTest(pwReg, passWord, regResult);
             rePwRegTest(rePassWord, passWord, regResult);
-            if (result[0]) {
-                console.log(md5.array(passWord));
+            if (regResult[0]) {
+                console.log(md5(passWord));
+
+                POST({
+                    url: "http://wucx.me/mto/signup.do",
+                    obj: {
+                        phone:"12412312311",
+                        email:"1@1.com",
+                        password:"!11111111",
+                        captcha:"1111"
+                    },
+                    successCallBack: function (xhr) {
+                        console.log(xhr.response);
+                    }
+                });
             }
+
         }
     }
 

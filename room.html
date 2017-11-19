@@ -8,6 +8,7 @@
     <script src="js/md5.min.js"></script>
     <script src="js/MTO.js"></script>
     <script src="js/MTO_login.js"></script>
+    <script src="js/MTO_player.js"></script>
 </head>
 <body>
 <canvas id="bg_canvas" class="bg-canvas">
@@ -66,7 +67,9 @@
 </aside>
 
 <main id="main" class="main">
-    <div id="content_bg" class="content-bg"></div>
+    <div id="content_bg" class="content-bg">
+        <img src="source/1.jpg" alt="">
+    </div>
     <div id="content_box" class="content-box">
         <div class="main-box">
             <!--播放器-->
@@ -86,9 +89,9 @@
                         <span class="progress-time">03:00</span>
                     </div>
                     <div class="button-box">
-                        <i class="btn-volume"></i>
-                        <i class="btn-start"></i>
-                        <i class="btn-skip"></i>
+                        <i id="btn_volume" class="btn-volume"></i>
+                        <i id="btn_start" class="btn-start"></i>
+                        <i id="btn_skip" class="btn-skip"></i>
                     </div>
                 </div>
                 <div class="play-list-box">
@@ -307,7 +310,9 @@
                     <li class="error-tips">与上面的密码必须一致！</li>
                     <li class="verify-code-wrap">
                         <input type="text" id="verify_code_input" class="verify-code-input" placeholder="请填写验证码">
-                        <span class="verify-code">验证码</span>
+                        <span class="verify-code">
+                            <img src="http://wucx.me/mto/signup.captcha" alt="">
+                        </span>
                     </li>
                 </ul>
                 <input id="login_btn" class="login-btn" type="submit" value="登 录">
@@ -319,6 +324,7 @@
         <span class="login-box-close-btn">×</span>
     </div>
 </div>
+
 <script>
     "use strict";
 </script>

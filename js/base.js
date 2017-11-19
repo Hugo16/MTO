@@ -108,7 +108,7 @@ function client() {
         client = function () {
             return {
                 width: window.innerWidth,
-                height: window.innerHeight,
+                height: window.innerHeight
             }
         };
         return {
@@ -198,10 +198,10 @@ function Ajax(option) {
     // 设置默认请求参数
     option.tyoe = option.type || "get";
     option.obj = option.obj || {};
-    option.successCalkBack = option.successCalkBack || function () {
+    option.successCallBack = option.successCallBack || function () {
         console.log("请求成功！");
     };
-    option.errorCalkBack = option.errorCalkBack || function () {
+    option.errorCallBack = option.errorCallBack || function () {
         console.log("请求失败！");
     };
 
@@ -216,7 +216,7 @@ function Ajax(option) {
 
     // 设置请求路径
     let arrParam = [];
-    for (var key in option.obj) {
+    for (let key in option.obj) {
         arrParam.push(key + "=" + option.obj[key]);
     }
     // 解决get请求在ie的缓存问题
@@ -232,21 +232,23 @@ function Ajax(option) {
     // 发送请求
     if (option.type == "post") {
         // 设置请求报头
-        xmlHttp.setRequestHeader("Content-type", "application/x-www-from-urlencoded")
+        xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         // 发送请求
         xmlHttp.send(paramRes);
     }
-    xmlHttp.send();
+    else {
+        xmlHttp.send();
+    }
 
     // 监听请求状态
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4) {
             if (xmlHttp.status >= 200 && xmlHttp.status < 300 || xmlHttp.status == 304) {
                 clearTimeout(timer);
-                option.successCalkBack(xmlHttp);
+                option.successCallBack(xmlHttp);
             }
             else {
-                option.errorCalkBack(xmlHttp);
+                option.errorCallBack(xmlHttp);
             }
         }
     };
@@ -264,12 +266,103 @@ function Ajax(option) {
  */
 function GET(option) {
     option.type = "get";
-    Ajax(option);
+    new Ajax(option);
 }
 
 function POST(option) {
     option.type = "post";
-    Ajax(option);
+    new Ajax(option);
+}
+
+
+/**
+ * @description 创建随机音符
+ * @param num 音符数量
+ * @returns {Array}
+ */
+function createNote(num) {
+    // 存储音符的数组
+    let note = [],
+        // 音符图片
+        img = new Image();
+    img.src = "source/note.png";
+    // 设置音符数量和参数
+    for (let i = 0; i < num; i++) {
+        // 随机一个放大倍数（0.3-1.2）
+        let zoom = Math.random() * 0.9 + 0.3;
+        // 随机一个透明度（0.5-1）
+        let alpha = Math.random() * 0.5 + 0.5;
+        // 为每一个音符准备属性
+        note[i] = {
+            // 图片
+            img: img,
+            // 裁剪的X轴位置（0||27）
+            sx: (Math.random() > 0.5 ? 1 : 0) * 27,
+            // 裁剪的Y轴位置（0||1||2 * 37）
+            sy: parseInt(Math.random() * 3) * 37,
+            // 裁剪图片的宽高
+            swidth: 27,
+            sheight: 32,
+            // 图片在canvas中的X轴位置（浏览器可视区域宽度中随机）
+            x: Math.random() * client().width,
+            // 图片在canvas中的Y轴位置（浏览器可视区域高度*（1-1.5））
+            y: (Math.random() * 0.5 + 1) * client().height,
+            // 宽高按照之前的随机数 放大||缩小
+            width: 27 * zoom,
+            height: 37 * zoom,
+            // 图片移动的速度
+            speed: Math.random() * 2,
+            // 透明度为之前的随机数
+            alpha: alpha
+        }
+    }
+    return note;
+}
+
+
+/**
+ * @description 绘制音符函数
+ */
+function drawNote(ctx, note) {
+    for (let i = 0; i < note.length; i++) {
+        // 拿到每一个音符准备好的属性
+        let p = note[i];
+        // 设置透明度
+        ctx.globalAlpha = p.alpha;
+        // 根据属性绘制每一个音符
+        ctx.drawImage(p.img, p.sx, p.sy, p.swidth, p.sheight, p.x, p.y, p.width, p.height);
+        // 修改音符的Y轴值（让音符往上走）
+        p.y -= p.speed;
+        // 修改透明度（逐渐透明）
+        p.alpha -= 0.0025;
+        // 如果音符移动到了浏览器顶端或者透明度为0
+        if (p.y <= 0 || p.alpha <= 0) {
+            // 重新随机音符的位置和透明度
+            p.y = (Math.random() * 0.5 + 1) * client().height;
+            p.x = Math.random() * client().width;
+            p.alpha = Math.random() * 0.5 + 0.5;
+        }
+    }
+}
+
+/**
+ * @description 绘制Canvas背景
+ */
+function drawBgCanvas(ctx) {
+    // 绘制背景
+    // 设置背景渐变
+    let gra = ctx.createLinearGradient(20, 10, 0, client().height);
+    // 设置透明度为1
+    ctx.globalAlpha = 1;
+    // 清除canvas
+    ctx.clearRect(0, 0, client().width, client().height);
+    // 设置渐变颜色
+    gra.addColorStop(0, "#596164");
+    gra.addColorStop(1, "#868f96");
+    // 设置填充
+    ctx.fillStyle = gra;
+    // 填充canvas
+    ctx.fillRect(0, 0, client().width, client().height);
 }
 
 function Barrage(option) {
@@ -279,7 +372,7 @@ function Barrage(option) {
 Barrage.prototype = {
     constructor: Barrage,
     _init: function (option) {
-        for (var obj in option) {
+        for (let obj in option) {
             this[obj] = option[obj];
         }
     },
